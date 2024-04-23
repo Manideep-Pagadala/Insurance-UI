@@ -1,0 +1,43 @@
+<div class="container my-4 mx-auto">
+    <div class="card shadow mb-3">
+        <div class="card-header ">
+            <h2>Income Details</h2>
+        </div>
+    </div>
+    <div class="card shadow">
+        <div class="card-body  ">
+            <form [formGroup]="registerForm" (ngSubmit)="register()" class="row g-3">
+                <div class="form-group">
+                    <input type="number" class="form-control" formControlName="appNumber" placeholder="App Number"
+                        [ngClass]="{ 'is-invalid': isSubmit && con.appNumber.invalid }">
+                    <div *ngIf="isSubmit && con.appNumber.invalid" class="invalid-feedback">
+                        App Number is required
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="salaryIncome"
+                            placeholder="Salary Income"
+                            [ngClass]="{ 'is-invalid': isSubmit && con.salaryIncome.invalid }">
+                        <div *ngIf="isSubmit && con.salaryIncome.invalid" class="invalid-feedback">
+                            Salary Income is required
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="propertyIncome"
+                            placeholder="Property Income"
+                            [ngClass]="{ 'is-invalid': isSubmit && con.propertyIncome.invalid }">
+                        <div *ngIf="isSubmit && con.propertyIncome.invalid" class="invalid-feedback">
+                            Property Income is required
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary shadow">Sava Income Data</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

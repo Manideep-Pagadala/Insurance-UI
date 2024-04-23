@@ -1,0 +1,90 @@
+<div class="container my-4">
+    <div class="card shadow mb-3">
+        <div class="card-header ">
+            <h2>Create Application</h2>
+        </div>
+    </div>
+    <div class="card shadow">
+        <div class="card-body">
+            <form [formGroup]="registerForm" (ngSubmit)="register()" class="row g-3">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="citizenName" placeholder="Name"
+                            [ngClass]="{ 'is-invalid': isSubmit && con.citizenName.invalid }">
+                        <div *ngIf="isSubmit && con.citizenName.invalid" class="invalid-feedback">
+                            Name is required
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="ssn" placeholder="SSN"
+                            [ngClass]="{ 'is-invalid': isSubmit && con.ssn.invalid }">
+                        <div *ngIf="isSubmit && con.ssn.invalid" class="invalid-feedback">
+                            SSN is required
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="planId" placeholder="Plan ID"
+                            [ngClass]="{ 'is-invalid': isSubmit && con.planId.invalid }">
+                        <div *ngIf="isSubmit && con.planId.invalid" class="invalid-feedback">
+                            Plan ID is required
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Date Of Birth :</label><br>
+                        <input type="date" class="form-control" formControlName="dob" placeholder=""
+                            [ngClass]="{ 'is-invalid': isSubmit && con.dob.invalid }">
+                        <div *ngIf="isSubmit && con.dob.invalid" class="invalid-feedback">
+                            DOB is required
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="email" class="form-control" formControlName="gmail" placeholder="Email"
+                            [ngClass]="{ 'is-invalid': isSubmit && con.gmail.invalid }">
+                        <div *ngIf="isSubmit && con.gmail.invalid" class="invalid-feedback">
+                            Email is required and must be a valid email address
+                        </div>
+                    </div>
+                    <!-- <div class="form-group">
+                        <input type="text" class="form-control" formControlName="phone" placeholder="Phone"
+                            [ngClass]="{ 'is-invalid': isSubmit && con.phone.invalid }">
+                        <div *ngIf="isSubmit && con.phone.invalid" class="invalid-feedback">
+                            Phone is required and must be a number
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="citizenId" placeholder="Citizen ID"
+                            [ngClass]="{ 'is-invalid': isSubmit && con.citizenId.invalid }">
+                        <div *ngIf="isSubmit && con.citizenId.invalid" class="invalid-feedback">
+                            Citizen ID is required
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input " type="radio" formControlName="gender" value="male"
+                                id="male">
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" formControlName="gender" value="female"
+                                id="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                        <div *ngIf="isSubmit && con.gender.invalid" class="invalid-feedback d-block">
+                            Gender is required
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary shadow">Create Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

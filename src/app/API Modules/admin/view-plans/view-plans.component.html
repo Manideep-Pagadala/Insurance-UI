@@ -1,0 +1,41 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<div class="container my-5 ">
+    <div class="card shadow mb-3">
+        <div class="card-body">
+            <h2>View Plans</h2>
+        </div>
+    </div>
+    <div class="card shadow">
+        <div class="card-body text-center">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th scope="col">S.NO</th>
+                        <th scope="col">Plan Name</th>
+                        <th scope="col">Plan Start Date</th>
+                        <th scope="col">Plan End Date</th>
+                        <th scope="col">Plan Category</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let plan of plans;let i = index;">
+                        <td>{{i+1}}</td>
+                        <td>{{plan.planName}}</td>
+                        <td>{{plan.planStartDate}}</td>
+                        <td>{{plan.planEndDate}}</td>
+                        <td>{{plan.comments}}</td>
+                        <td><button class="btn btn-sm" (click)="editPlan(i)">
+                                <i class='bx bxs-edit' style='color:#1abfeb;font-size: 28px;'></i>
+                            </button></td>
+                        <td><button class="btn btn-sm" (click)="editPlan(i)">
+                                <i class='bx bx-message-alt-x' style='color:#eb431a;font-size: 28px;'></i>
+                            </button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>

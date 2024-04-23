@@ -1,0 +1,37 @@
+.offcanvas-start {
+  max-width: 290px;
+  background-color: rgba(137, 44, 204, 0.922);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.list-group-item {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.list-group-item:hover, a:hover {
+  color:white;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+
+.list-group {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 3px;
+
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}

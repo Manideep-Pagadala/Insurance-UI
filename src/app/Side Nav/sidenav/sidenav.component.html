@@ -1,0 +1,99 @@
+<div class="offcanvas offcanvas-start p-3 custom-offcanvas" data-bs-scroll="true" tabindex="-1"
+  id="offcanvasWithBothOptions">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"><img src="\assets\images\logos\his logo.png"
+        class="w-50"></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <!-- Citizen Registration -->
+  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse"
+    data-bs-target="#citizensComponents" aria-expanded="false" aria-controls="citizensComponents">
+    <i class="fas fa-user-plus me-2"></i> Citizen Registration
+  </a>
+  <div class="collapse" id="citizensComponents" data-bs-parent="#offcanvasWithBothOptions">
+    <ul class="list-group">
+      <li class="list-group-item"><a routerLink="/reg">Register </a></li>
+      <li class="list-group-item"><a routerLink="/login">Login </a></li>
+    </ul>
+  </div>
+
+
+  <!-- Application Registration -->
+  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse"
+    data-bs-target="#appRegComponents" aria-expanded="false" aria-controls="appRegComponents">
+    <i class="fas fa-user-plus me-2"></i> Application Registration
+  </a>
+  <div class="collapse" id="appRegComponents" data-bs-parent="#offcanvasWithBothOptions">
+    <ul class="list-group">
+      <li class="list-group-item"><a routerLink="/appreg">create application</a></li>
+      <li class="list-group-item"><a routerLink="viewapps">view application</a></li>
+    </ul>
+  </div>
+
+
+
+  <!-- Data Collection -->
+  <a  class="list-group-item list-group-item-action" data-bs-toggle="collapse"
+    data-bs-target="#dataCollectionComponents" aria-expanded="false" aria-controls="dataCollectionComponents">
+    <i class="fas fa-database me-2"></i> Data Collection
+  </a>
+  <div class="collapse" id="dataCollectionComponents" data-bs-parent="#offcanvasWithBothOptions">
+    <ul class="list-group">
+      <li class="list-group-item"><a routerLink="/income">Income details</a></li>
+      <li class="list-group-item"><a routerLink="/education">Education details</a></li>
+      <li class="list-group-item"><a routerLink="/kids">kids details</a></li>
+      <li class="list-group-item"><a routerLink="/summary">summary</a></li>
+    </ul>
+  </div>
+
+  <!-- Eligibility Determination -->
+  <a  class="list-group-item list-group-item-action" data-bs-toggle="collapse"
+    data-bs-target="#eligibilityComponents" aria-expanded="false" aria-controls="eligibilityComponents">
+    <i class="fas fa-check-circle me-2"></i> Eligibility Determination
+  </a>
+  <div class="collapse" id="eligibilityComponents" data-bs-parent="#offcanvasWithBothOptions">
+    <ul class="list-group">
+      <li class="list-group-item"><a routerLink="/eligibility">Determine eligibility</a></li>
+    </ul>
+  </div>
+
+  <!-- Correspondence -->
+  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse"
+    data-bs-target="#correspondenceComponents" aria-expanded="false" aria-controls="correspondenceComponents">
+    <i class="fas fa-envelope me-2"></i> Correspondence
+  </a>
+  <div class="collapse" id="correspondenceComponents" data-bs-parent="#offcanvasWithBothOptions">
+    <ul class="list-group">
+      <li class="list-group-item"><a routerLink="/correspondence">correspondence</a></li>
+      <li class="list-group-item"><a routerLink="/pendingnotices">pending notices</a></li>
+      <li class="list-group-item"><a routerLink="/historynotices">history notices</a></li>
+    </ul>
+  </div>
+
+  <!-- Benefit Issuance -->
+  <div class="list-group-item list-group-item-action" aria-expanded="false" aria-controls="benefitIssuanceComponents">
+    <a routerLink="#"> <i class="fas fa-gift me-2"></i> Benefit Issuance</a>
+  </div>
+
+
+  <!-- Reports -->
+  <div class="list-group-item list-group-item-action" aria-expanded="false" aria-controls="reportsComponents">
+    <a routerLink="/reports"> <i class="fas fa-chart-bar me-2"></i> Reports </a>
+  </div>
+
+
+  <!-- Admin -->
+  <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#adminComponents"
+    aria-expanded="false" aria-controls="adminComponents">
+    <i class="fas fa-cog me-2"></i> Admin
+  </a>
+  <div class="collapse" id="adminComponents" data-bs-parent="#offcanvasWithBothOptions">
+    <ul class="list-group">
+      <li class="list-group-item"><a routerLink="/admin">Create Account</a></li>
+      <li class="list-group-item"><a routerLink="/viewacc">View Accounts</a></li>
+      <li class="list-group-item"><a routerLink="/createplan">Create Plan</a></li>
+      <li class="list-group-item"><a routerLink="/viewplans">View Plans</a></li>
+    </ul>
+  </div>
+</div>

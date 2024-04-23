@@ -1,0 +1,20 @@
+.container{
+    width: 80%;
+}
+
+.card-body {
+    width: 90%;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 0.9rem;
+}
+
+.form-check-inline {
+    margin-right: 2rem;
+}
+
+.form-control {
+    padding: 0.6rem;
+}

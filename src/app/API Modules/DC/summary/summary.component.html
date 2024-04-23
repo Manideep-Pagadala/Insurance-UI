@@ -1,0 +1,86 @@
+<div class="container my-5">
+    <div class="card shadow mb-3 rounded">
+        <div class="card-header bg-secondary text-white">
+            <h2 class="m-0">View Applications</h2>
+        </div>
+    </div>
+    <div class="card shadow mb-3 rounded">
+        <div class="card-header bg-white text-dark border-0  mx-2 my-1">
+            <h2 class="m-0">Income Data</h2>
+        </div>
+        <div class="card-body text-center ">
+            <table class="table table-bordered table-striped">
+                <thead class="text-secondary">
+                    <tr>
+                        <th scope="col" class="text-secondary">S.NO</th>
+                        <th scope="col" class="text-secondary">App Number</th>
+                        <th scope="col" class="text-secondary">Salary Income</th>
+                        <th scope="col" class="text-secondary">Property Income</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="income!=null">
+                        <td>{{1}}</td>
+                        <td>{{income.appNumber}}</td>
+                        <td>{{income.salaryIncome}}</td>
+                        <td>{{income.propertyIncome}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div></div>
+        <div class="card shadow mb-3">
+            <div class="card-header bg-white text-dark border-0  mx-2 my-1">
+                <h2 class="m-0">Education Data</h2>
+            </div>
+            <div class="card-body text-center ">
+                <table class="table table-bordered table-striped">
+                    <thead class="text-secondary">
+                        <tr >
+                            <th scope="col" class="text-secondary">S.NO</th>
+                            <th scope="col" class="text-secondary">App Number</th>
+                            <th scope="col" class="text-secondary">Highest Degree</th>
+                            <th scope="col" class="text-secondary">Graduation Year</th>
+                            <th scope="col" class="text-secondary">University Name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="education!=null">
+                            <td>{{1}}</td>
+                            <td>{{education.appNumber}}</td>
+                            <td>{{education.highestDegree}}</td>
+                            <td>{{education.graduationYear}}</td>
+                            <td>{{education.universityName}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card shadow mb-3">
+            <div class="card-header bg-white text-dark border-0  mx-2 my-1">
+                <h2 class="m-0">Kids Data</h2>
+            </div>
+            <div class="card-body text-center ">
+                <table class="table table-bordered table-striped">
+                    <thead class="text-secondary">
+                        <tr>
+                            <th scope="col" class="text-secondary">S.NO</th>
+                            <th scope="col" class="text-secondary">App Number</th>
+                            <th scope="col" class="text-secondary">Kid Name</th>
+                            <th scope="col" class="text-secondary">Date of Birth</th>
+                            <th scope="col" class="text-secondary">SSN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let kid of kidsarray; let i=index">
+                            <td>{{i+1}}</td>
+                            <td>{{kid.appNumber}}</td>
+                            <td>{{kid.kidName}}</td>
+                            <td>{{kid.kidDob}}</td>
+                            <td>{{kid.kidSSN}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    

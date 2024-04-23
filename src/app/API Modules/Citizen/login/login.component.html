@@ -1,0 +1,38 @@
+<p>login</p>
+<!-- <div class="container my-5">
+    <div class="card-container mx-auto my-2">
+        <div class="row-container row shadow text-secondary">
+            <div class="col form-container ">
+                <form class="custom-form" [formGroup]="loginForm" #logform="ngForm" (submit)="login()">
+                    <div class="mb-3 form-floating">
+                        <input type="email" class="form-control " id="email" placeholder="" formControlName="email"
+                            [ngClass]="{'is-invalid':isSubmit&&con.email.errors}" required>
+                        <label for="email" class="form-label"><span class="text-danger">*</span>Email</label>
+                        <span *ngIf="isSubmit&&con.email.errors" class="text-danger">Email should not be empty..!</span>
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <input type="password" class="form-control" id="pwd" placeholder="" formControlName="pwd"
+                            [ngClass]="{'is-invalid':isSubmit&&con.pwd.errors}" required="">
+                        <label for="pwd" class="form-label"><span class="text-danger">*</span>Password</label>
+                        <span class="text-danger">
+                            {{ (con.pwd.errors?.required && isSubmit) ? 'Password should not be empty..!' :
+                            (con.pwd.errors?.minlength && (isSubmit) ? 'Password should contain at least 4 characters' :
+                            '') }}
+                        </span>
+                        <div class="my-4 text-center">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                        <div class="text-center">
+                            Don't you have an account? <a href="/reg" class="btn btn-outline-danger">Register here</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div
+                class="col text-container text-center d-flex flex-column justify-content-center align-items-center text-light">
+                <h2>Login form</h2><br>
+                <p> Login with valid credentials </p>
+            </div>
+        </div>
+    </div>
+</div> -->
