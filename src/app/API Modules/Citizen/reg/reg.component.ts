@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CitizenDto } from '../citizen-dto';
 import { CitizenService } from '../citizen.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reg',
@@ -11,7 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegComponent {
   isSubmit: boolean = false;
 
-  constructor(private service: CitizenService) { }
+  constructor(private service: CitizenService, private r: Router) { }
 
   public registerForm: any = new FormGroup({
     citizenName: new FormControl('', [Validators.required]),
@@ -30,6 +32,12 @@ export class RegComponent {
     this.isSubmit = true;
 
     if (this.registerForm.invalid) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Enter Your Details...",
+        timer: 1500
+      });
       return;
     }
 
@@ -42,11 +50,22 @@ export class RegComponent {
       this.registerForm.value.ssn,
       this.registerForm.value.gender
     );
-    console.log(dto);
     this.service.reg(dto).subscribe((response: any) => {
-      console.log(response);
-      alert(response);
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: response,
+        timer: 1500
+      });
+      this.r.navigate(['/appreg']);
+
     }, (error: any) => {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error,
+        timer: 1500
+      });
       console.error(error);
     });
   }

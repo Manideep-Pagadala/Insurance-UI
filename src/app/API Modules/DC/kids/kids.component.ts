@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { KidsDto } from '../DTO/kids-dto';
 import { KidsinfoDto } from '../DTO/kidsinfo-dto';
 import { DcService } from '../Service/dc.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-kids',
@@ -45,7 +46,15 @@ export class KidsComponent implements OnInit {
 
   register() {
     this.isSubmit = true;
-    if (this.registerForm.invalid) return;
+    if (this.registerForm.invalid) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Enter Your Details...",
+        timer: 1500
+      });
+      return;
+    }
 
     const kidsData = this.kidsArray.map((kid, index) => {
       return new KidsDto(
@@ -67,7 +76,12 @@ export class KidsComponent implements OnInit {
 
     this.service.savekids(kidsInfo).subscribe(
       (response: any) => {
-        alert(response);
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: response,
+          timer: 1500
+        });
         console.log(response);
         this.isSubmit = false;
         this.r.navigate(['/summary'], {
@@ -75,6 +89,12 @@ export class KidsComponent implements OnInit {
         });
       },
       (error: any) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: error,
+          timer: 1500
+        });
         console.error(error);
       }
     );

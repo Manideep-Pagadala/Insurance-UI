@@ -1,1 +1,43 @@
-<p>historynotices works!</p>
+<div class="container my-4 mx-auto">
+    <div class="card shadow mb-3">
+        <div class="card-header ">
+            <h2>History Notices</h2>
+        </div>
+    </div>
+    <div class="card shadow ">
+        <div class="card-body ">
+            <div class="mb-3 form-group">
+                <label for="name" class="form-label">App Number</label>
+                <input type="text" class="form-control bg-light fw-bold" placeholder="" name="name"
+                    [(ngModel)]="appNumber" required readonly>
+            </div>
+            <div class="col-12 ">
+                <button type="submit" class="btn btn-primary shadow " (click)=" searchHistoryNotices()">Search</button>
+            </div>
+        </div>
+    </div>
+    <div class="card shadow mb-3 my-3" *ngIf="coData!=null && flag">
+        <div class="card-body  my-3 ">
+            <table class="table text-center table-bordered table-striped table-sm p-3 fs-6">
+                <thead class="text-secondary ">
+                    <tr>
+                        <th scope="col" class="text-secondary">S.NO</th>
+                        <th scope="col" class="text-secondary">NoticeId</th>
+                        <th scope="col" class="text-secondary">App Number</th>
+                        <th scope="col" class="text-secondary">Notice Status</th>
+                        <th scope="col" class="text-secondary">Generated Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="p-3">{{1}}</td>
+                        <td class="p-3">{{coData.coNoticeId}}</td>
+                        <td class="p-3">{{coData.appNumber}}</td>
+                        <td class="p-3">{{coData.coStatus}}</td>
+                        <td class="p-3">{{coData.coGenDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

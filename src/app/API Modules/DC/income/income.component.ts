@@ -3,6 +3,7 @@ import { DcService } from '../Service/dc.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IncomeDto } from '../DTO/income-dto';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-income',
   templateUrl: './income.component.html',
@@ -26,8 +27,15 @@ export class IncomeComponent {
 
   register() {
     this.isSubmit = true;
-    if (this.registerForm.invalid)
+    if (this.registerForm.invalid) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Enter Your Details...",
+        timer: 1500
+      });
       return;
+    }
 
     let dto: IncomeDto = new IncomeDto(
       0,
@@ -39,7 +47,12 @@ export class IncomeComponent {
     console.log(dto);
 
     this.service.saveIncome(dto).subscribe((response: any) => {
-      alert(response);
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: response,
+        timer: 1500
+      });
       console.log(response)
       this.registerForm.reset();
       this.isSubmit = false;
@@ -47,6 +60,12 @@ export class IncomeComponent {
         queryParams: { appNumber: dto.getAppNumber() }
       });
     }, (error: any) => {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error,
+        timer: 1500
+      });
       console.error(error);
     });
 

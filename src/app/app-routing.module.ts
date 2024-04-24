@@ -14,10 +14,11 @@ import { IncomeComponent } from './API Modules/DC/income/income.component';
 import { EducationComponent } from './API Modules/DC/education/education.component';
 import { KidsComponent } from './API Modules/DC/kids/kids.component';
 import { SummaryComponent } from './API Modules/DC/summary/summary.component';
-import { EligDetComponent } from './API Modules/elig-det/elig-det.component';
+import { EligDetComponent } from './API Modules/ED/elig-det.component';
 import { CorrespondenceComponent } from './API Modules/CO/correspondence/correspondence.component';
 import { PendingnoticesComponent } from './API Modules/CO/pendingnotices/pendingnotices.component';
 import { HistorynoticesComponent } from './API Modules/CO/historynotices/historynotices.component';
+
 
 const routes: Routes = [
   {
@@ -77,20 +78,18 @@ const routes: Routes = [
     component: EligDetComponent
   },
   {
-    path: "bi",
-    component: BiComponent
-  },
-  {
     path: "correspondence",
     component: CorrespondenceComponent
-  },
-  {
+  }, {
     path: "pendingnotices",
     component: PendingnoticesComponent
-  },
-  {
+  }, {
     path: "historynotices",
     component: HistorynoticesComponent
+  },
+  {
+    path: "bi",
+    component: BiComponent
   },
   {
     path: "reports",

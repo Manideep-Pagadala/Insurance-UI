@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DashboardComponent } from './API Modules/dashboard/dashboard.component';
 import { AppRegComponent } from './API Modules/app-reg/app-reg.component';
-import { EligDetComponent } from './API Modules/elig-det/elig-det.component';
 import { BiComponent } from './API Modules/bi/bi.component';
 import { ReportsComponent } from './API Modules/reports/reports.component';
 import { AdminComponent } from './API Modules/admin/admin.component';
@@ -31,17 +30,18 @@ import { IncomeComponent } from './API Modules/DC/income/income.component';
 import { EducationComponent } from './API Modules/DC/education/education.component';
 import { KidsComponent } from './API Modules/DC/kids/kids.component';
 import { SummaryComponent } from './API Modules/DC/summary/summary.component';
-import { EligibiltyService } from './API Modules/elig-det/eligibilty.service';
+import { EligibiltyService } from './API Modules/ED/eligibilty.service';
+import { EligDetComponent } from './API Modules/ED/elig-det.component';
 import { CorrespondenceComponent } from './API Modules/CO/correspondence/correspondence.component';
 import { PendingnoticesComponent } from './API Modules/CO/pendingnotices/pendingnotices.component';
 import { HistorynoticesComponent } from './API Modules/CO/historynotices/historynotices.component';
 import { CoService } from './API Modules/CO/co.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     AppRegComponent,
-    EligDetComponent,
     BiComponent,
     ReportsComponent,
     AdminComponent,
@@ -58,9 +58,11 @@ import { CoService } from './API Modules/CO/co.service';
     EducationComponent,
     KidsComponent,
     SummaryComponent,
+    EligDetComponent,
     CorrespondenceComponent,
     PendingnoticesComponent,
     HistorynoticesComponent
+
   ],
   imports: [
     BrowserModule,

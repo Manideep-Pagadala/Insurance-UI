@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AppDto } from './app-dto';
 import { ApplicationService } from './application.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-app-reg',
   templateUrl: './app-reg.component.html',
@@ -30,6 +31,12 @@ export class AppRegComponent {
     this.isSubmit = true;
 
     if (this.registerForm.invalid) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Enter Your Details...",
+        timer: 1500
+      });
       return;
     }
 
@@ -45,14 +52,23 @@ export class AppRegComponent {
       new Date(),
       null
     );
-
-    console.log(dto);
     this.service.reg(dto).subscribe((response: any) => {
       console.log(response);
-      alert(response);
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: response,
+        timer: 1500
+      });
       this.registerForm.reset();
-      this.isSubmit=false;
+      this.isSubmit = false;
     }, (error: any) => {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: error,
+        timer: 1500
+      });
       console.error(error);
     });
   }
